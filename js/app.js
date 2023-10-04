@@ -62,42 +62,20 @@ const predictsArr1 = [
     'Вам не удастся понравиться абсолютно всем, не тратьте на это энергию.',
     'Одежда, которая вас старит, не достанется вам.'
   ]
-  
-//const predictsArr2 = predictsArr1.map(x => x);
-//const predictsArr2 = [...predictsArr1];
-const predictsArr2 = [
-    'Овен',
-    'Телец',
-    'Близнецы',
-    'Рак',
-    'Лев',
-    'Дева',
-    'Весы',
-    'Скорпион',
-    'Стрелец',
-    'Козерог',
-    'Водолей',
-    'Рыбы'
-  ]
+  const predictsArr2 = [...predictsArr1];
 const obj = {
-    predictions: [],
-        setPredictions(arr) {
-          const index = Math.floor(Math.random() * arr.length);
-          return arr[index];
-        },
-        showPrediction1() {
-          const predictions1 = this.setPredictions(predictsArr1);
-          return this.predictions.push(predictions1);
-        },
-        showPrediction2() {
-          const predictions2 = this.setPredictions(predictsArr2);
-          return this.predictions.push(predictions2);
-        },
-        
+//  predictions: [],
+      setPredictions(arr) {
+        const index = Math.floor(Math.random() * arr.length);
+        return arr[index];
+      },
+      showPrediction() {
+        console.log(this.setPredictions(predictsArr1));
+        console.log(this.setPredictions(predictsArr2));
+      },
+//      takeNumber() {
+//        
+//      },
 }
 const predictions = obj;
-predictions.showPrediction2(predictsArr2);
-predictions.showPrediction1(predictsArr1);
-console.log(predictions.predictions.join('      '));
-
-
+predictions.setPredictions(predictsArr);
