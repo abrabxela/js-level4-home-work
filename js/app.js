@@ -1,4 +1,3 @@
-
 // 1. вывести одной строкой минимальное значние массива array с помощью деструктуризации и Math
 const array = [1,2,3,4,6,710,34013,13];
 Math.min(...array);
@@ -62,20 +61,26 @@ const predictsArr1 = [
     'Вам не удастся понравиться абсолютно всем, не тратьте на это энергию.',
     'Одежда, которая вас старит, не достанется вам.'
   ]
-  const predictsArr2 = [...predictsArr1];
+
 const obj = {
-//  predictions: [],
+  predictions: [],
       setPredictions(arr) {
-        const index = Math.floor(Math.random() * arr.length);
-        return arr[index];
+        const predictions1 = arr[this.takeNumber(arr)];
+        const predictsArr2 = [...arr];
+        const predictions2 = predictsArr2[this.takeNumber(predictsArr2)];
+        return this.predictions = [
+          predictions1,
+          predictions2
+        ];
       },
       showPrediction() {
-        console.log(this.setPredictions(predictsArr1));
-        console.log(this.setPredictions(predictsArr2));
+        console.log(this.predictions.join(" "))
       },
-//      takeNumber() {
-//        
-//      },
+      takeNumber(arr) {
+        const index = Math.floor(Math.random() * arr.length);
+        return (index);    
+      },
 }
 const predictions = obj;
-predictions.setPredictions(predictsArr);
+predictions.setPredictions(predictsArr1);
+predictions.showPrediction();
